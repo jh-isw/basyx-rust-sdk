@@ -3,6 +3,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+use core::fmt;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Clone, Debug, Default)]
@@ -51,26 +52,26 @@ impl DataObjectTypeName {
     }
 }
 
-impl ToString for DataObjectTypeName {
-    fn to_string(&self) -> std::string::String {
+impl fmt::Display for DataObjectTypeName {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let s = match self {
-            DataObjectTypeName::Boolean => "boolean",
-            DataObjectTypeName::Double => "double",
-            DataObjectTypeName::Int => "int",
-            DataObjectTypeName::Short => "short",
-            DataObjectTypeName::Byte => "byte",
-            DataObjectTypeName::String => "string",
-            DataObjectTypeName::Time => "time",
-            DataObjectTypeName::Duration => "duration",
-            DataObjectTypeName::Decimal => "decimal",
-            DataObjectTypeName::HexBinary => "hexBinary",
-            DataObjectTypeName::DateTime => "dateTime",
-            DataObjectTypeName::Date => "date",
+            DataObjectTypeName::Boolean     => "boolean",
+            DataObjectTypeName::Double      => "double",
+            DataObjectTypeName::Int         => "int",
+            DataObjectTypeName::Short       => "short",
+            DataObjectTypeName::Byte        => "byte",
+            DataObjectTypeName::String      => "string",
+            DataObjectTypeName::Time        => "time",
+            DataObjectTypeName::Duration    => "duration",
+            DataObjectTypeName::Decimal     => "decimal",
+            DataObjectTypeName::HexBinary   => "hexBinary",
+            DataObjectTypeName::DateTime    => "dateTime",
+            DataObjectTypeName::Date        => "date",
             DataObjectTypeName::ComplexType => "complexType",
-            DataObjectTypeName::AnyType => "anyType",
-            DataObjectTypeName::Integer => "integer",
-            DataObjectTypeName::Float => "float",
+            DataObjectTypeName::AnyType     => "anyType",
+            DataObjectTypeName::Integer     => "integer",
+            DataObjectTypeName::Float       => "float",
         };
-        s.to_string()
+        write!(f, "{s}")
     }
 }
