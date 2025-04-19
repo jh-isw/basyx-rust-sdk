@@ -55,22 +55,22 @@ impl DataObjectTypeName {
 impl fmt::Display for DataObjectTypeName {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let s = match self {
-            DataObjectTypeName::Boolean     => "boolean",
-            DataObjectTypeName::Double      => "double",
-            DataObjectTypeName::Int         => "int",
-            DataObjectTypeName::Short       => "short",
-            DataObjectTypeName::Byte        => "byte",
-            DataObjectTypeName::String      => "string",
-            DataObjectTypeName::Time        => "time",
-            DataObjectTypeName::Duration    => "duration",
-            DataObjectTypeName::Decimal     => "decimal",
-            DataObjectTypeName::HexBinary   => "hexBinary",
-            DataObjectTypeName::DateTime    => "dateTime",
-            DataObjectTypeName::Date        => "date",
+            DataObjectTypeName::Boolean => "boolean",
+            DataObjectTypeName::Double => "double",
+            DataObjectTypeName::Int => "int",
+            DataObjectTypeName::Short => "short",
+            DataObjectTypeName::Byte => "byte",
+            DataObjectTypeName::String => "string",
+            DataObjectTypeName::Time => "time",
+            DataObjectTypeName::Duration => "duration",
+            DataObjectTypeName::Decimal => "decimal",
+            DataObjectTypeName::HexBinary => "hexBinary",
+            DataObjectTypeName::DateTime => "dateTime",
+            DataObjectTypeName::Date => "date",
             DataObjectTypeName::ComplexType => "complexType",
-            DataObjectTypeName::AnyType     => "anyType",
-            DataObjectTypeName::Integer     => "integer",
-            DataObjectTypeName::Float       => "float",
+            DataObjectTypeName::AnyType => "anyType",
+            DataObjectTypeName::Integer => "integer",
+            DataObjectTypeName::Float => "float",
         };
         write!(f, "{s}")
     }
