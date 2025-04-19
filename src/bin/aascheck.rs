@@ -8,9 +8,9 @@ use std::{
 };
 
 use clap::Parser;
-use color_eyre::eyre::{anyhow, Context, Result};
+use color_eyre::eyre::{Context, Result};
 use colored::Colorize;
-use jsonschema::{Draft, JSONSchema};
+use jsonschema::Validator;
 use serde_json::{json, Value};
 use thiserror::Error;
 
@@ -55,16 +55,13 @@ fn main() -> Result<()> {
     let opt = Opts::parse();
     let instance = read_json(&opt.input)?;
     let schema = static_json()?;
-    let compiled = JSONSchema::options()
-        .with_draft(Draft::Draft201909)
-        .compile(&schema)
-        .map_err(|e| anyhow!(e.to_string()))?;
+    let compiled = jsonschema::draft201909::new(&schema)?;
     check(&compiled, instance, opt.mode)?;
     output(&opt.input, opt.mode);
     Ok(())
 }
 
-fn check(schema: &JSONSchema, instance: Value, mode: Mode) -> Result<()> {
+fn check(schema: &Validator, instance: Value, mode: Mode) -> Result<()> {
     let instance = match mode {
         Mode::AAS => instance,
         Mode::Submodel => {
@@ -79,12 +76,13 @@ fn check(schema: &JSONSchema, instance: Value, mode: Mode) -> Result<()> {
     };
     let result = match schema.validate(&instance) {
         Ok(_) => Ok(()),
-        Err(errors) => {
-            let text = errors
-                .into_iter()
-                .map(|e| format!("{:#?}", e))
-                .collect::<Vec<String>>()
-                .join("\n");
+        Err(validation_error) => {
+            let text = validation_error.to_string();
+            // .into_iter() !!the new validate function returns only the first error, so nothing to iterate
+            // consider using iter_errors in the future
+            // .map(|e| format!("{:#?}", e))
+            // .collect::<Vec<String>>()
+            // .join("\n");
             Err(color_eyre::eyre::anyhow!(text).wrap_err("Validation failed!"))
         }
     };
