@@ -40,8 +40,7 @@
         },
         "text": {
           "type": "string",
-          "minLength": 1,
-          "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+          "minLength": 1
         }
       },
       "required": [
@@ -64,9 +63,6 @@
                   "maxLength": 4
                 },
                 {
-                  "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
-                },
-                {
                   "pattern": "^(0|[1-9][0-9]*)$"
                 }
               ]
@@ -79,9 +75,6 @@
                   "maxLength": 4
                 },
                 {
-                  "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
-                },
-                {
                   "pattern": "^(0|[1-9][0-9]*)$"
                 }
               ]
@@ -92,8 +85,7 @@
             "templateId": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 2000,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "maxLength": 2000
             }
           }
         }
@@ -162,8 +154,7 @@
         "globalAssetId": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 2000,
-          "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+          "maxLength": 2000
         },
         "specificAssetIds": {
           "type": "array",
@@ -175,8 +166,7 @@
         "assetType": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 2000,
-          "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+          "maxLength": 2000
         },
         "defaultThumbnail": {
           "$ref": "#/definitions/Resource"
@@ -213,8 +203,7 @@
             "messageTopic": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 255,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "maxLength": 255
             },
             "messageBroker": {
               "$ref": "#/definitions/Reference"
@@ -260,9 +249,6 @@
                 {
                   "minLength": 1,
                   "maxLength": 100
-                },
-                {
-                  "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
                 },
                 {
                   "pattern": "^([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+/([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+([ \\t]*;[ \\t]*([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+=(([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+|\"(([\\t !#-\\[\\]-~]|[\\x80-\\xff])|\\\\([\\t !-~]|[\\x80-\\xff]))*\"))*$"
@@ -383,21 +369,18 @@
             },
             "unit": {
               "type": "string",
-              "minLength": 1,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "minLength": 1
             },
             "unitId": {
               "$ref": "#/definitions/Reference"
             },
             "sourceOfDefinition": {
               "type": "string",
-              "minLength": 1,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "minLength": 1
             },
             "symbol": {
               "type": "string",
-              "minLength": 1,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "minLength": 1
             },
             "dataType": {
               "$ref": "#/definitions/DataTypeIec61360"
@@ -411,8 +394,7 @@
             },
             "valueFormat": {
               "type": "string",
-              "minLength": 1,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "minLength": 1
             },
             "valueList": {
               "$ref": "#/definitions/ValueList"
@@ -420,8 +402,7 @@
             "value": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 2000,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "maxLength": 2000
             },
             "levelType": {
               "$ref": "#/definitions/LevelType"
@@ -537,8 +518,7 @@
             "globalAssetId": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 2000,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "maxLength": 2000
             },
             "specificAssetIds": {
               "type": "array",
@@ -611,8 +591,7 @@
         "topic": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 255,
-          "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+          "maxLength": 255
         },
         "subjectId": {
           "$ref": "#/definitions/Reference"
@@ -642,8 +621,7 @@
             "name": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 128,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "maxLength": 128
             },
             "valueType": {
               "$ref": "#/definitions/DataTypeDefXsd"
@@ -675,8 +653,7 @@
             "value": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 2000,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "maxLength": 2000
             },
             "contentType": {
               "type": "string",
@@ -684,9 +661,6 @@
                 {
                   "minLength": 1,
                   "maxLength": 100
-                },
-                {
-                  "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
                 },
                 {
                   "pattern": "^([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+/([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+([ \\t]*;[ \\t]*([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+=(([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+|\"(([\\t !#-\\[\\]-~]|[\\x80-\\xff])|\\\\([\\t !-~]|[\\x80-\\xff]))*\"))*$"
@@ -763,8 +737,7 @@
             "id": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 2000,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "maxLength": 2000
             }
           },
           "required": [
@@ -782,8 +755,7 @@
         "value": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 2000,
-          "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+          "maxLength": 2000
         }
       },
       "required": [
@@ -1070,8 +1042,7 @@
             "type": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 128,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "maxLength": 128
             },
             "valueType": {
               "$ref": "#/definitions/DataTypeDefXsd"
@@ -1134,8 +1105,7 @@
             "category": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 128,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "maxLength": 128
             },
             "idShort": {
               "type": "string",
@@ -1143,9 +1113,6 @@
                 {
                   "minLength": 1,
                   "maxLength": 128
-                },
-                {
-                  "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
                 },
                 {
                   "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
@@ -1273,8 +1240,7 @@
         "path": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 2000,
-          "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+          "maxLength": 2000
         },
         "contentType": {
           "type": "string",
@@ -1282,9 +1248,6 @@
             {
               "minLength": 1,
               "maxLength": 100
-            },
-            {
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
             },
             {
               "pattern": "^([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+/([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+([ \\t]*;[ \\t]*([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+=(([!#$%&'*+\\-.^_`|~0-9a-zA-Z])+|\"(([\\t !#-\\[\\]-~]|[\\x80-\\xff])|\\\\([\\t !-~]|[\\x80-\\xff]))*\"))*$"
@@ -1306,14 +1269,12 @@
             "name": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 64,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "maxLength": 64
             },
             "value": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 2000,
-              "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+              "maxLength": 2000
             },
             "externalSubjectId": {
               "$ref": "#/definitions/Reference"
@@ -1506,8 +1467,7 @@
         "value": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 2000,
-          "pattern": "^([\\x09\\x0a\\x0d\\x20-\\ud7ff\\ue000-\\ufffd]|\\ud800[\\udc00-\\udfff]|[\\ud801-\\udbfe][\\udc00-\\udfff]|\\udbff[\\udc00-\\udfff])*$"
+          "maxLength": 2000
         },
         "valueId": {
           "$ref": "#/definitions/Reference"

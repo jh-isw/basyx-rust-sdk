@@ -1,3 +1,6 @@
 SPDX-FileCopyrightText: 2025 Plattform I4.0
 
-SPDX-License-Identifier: CC-BY-ND-3.0-DE
+SPDX-License-Identifier: CC-BY-4.0
+
+Modification by Jan Hecht on 2025-04-23:
+  - Removed all regex-blocks that use unicode surrogates, because jsonschema crate can't work with them
