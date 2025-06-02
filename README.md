@@ -41,6 +41,10 @@ or for a complete AAS environment:
 aascheck --mode AAS <INPUT>
 ```
 
+Information:  
+The original JSON schema uses regex, that contain unicode surrogates.  
+The schema that is used for `aascheck` has all unicode surrogate-containing regex removed.
+
 ## Funding Acknowledgment
 
 Eclipse BaSyx was started in 2017 for the implementation of the results

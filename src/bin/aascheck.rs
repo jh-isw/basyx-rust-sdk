@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2021 Fraunhofer Institute for Experimental Software Engineering IESE
+// SPDX-FileCopyrightText: 2025 Jan Hecht
 //
 // SPDX-License-Identifier: MIT
 
@@ -52,6 +53,10 @@ pub enum AASCheckError {
 }
 
 fn main() -> Result<()> {
+    println!("Information:");
+    println!("The original JSON schema uses regex, that contain unicode surrogates.");
+    println!("The schema that is used for `aascheck` has all unicode surrogate-containing regex removed.");
+
     let opt = Opts::parse();
     let instance = read_json(&opt.input)?;
     let schema = static_json()?;
